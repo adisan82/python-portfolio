@@ -1,0 +1,33 @@
+# Example Ouroboros Script (.obs)
+# Calculates Factorial of 5 (simplified loop) or simple math flow
+
+# 1. Initialize variables
+PUSH 10
+STORE a
+PUSH 20
+STORE b
+
+# 2. Add them
+LOAD a
+LOAD b
+ADD
+STORE c
+
+# 3. Print verification
+LOAD c
+PRINT
+
+# 4. Conditional Logic (Simulation)
+# if c == 30: print "CORRECT"
+LOAD c
+PUSH 30
+EQ
+JMP_IF_FALSE skip
+
+PUSH "Result is correct!"
+PRINT
+
+skip:
+PUSH "Done."
+PRINT
+HALT

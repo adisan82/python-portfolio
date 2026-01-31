@@ -1,0 +1,6 @@
+# Hyperion Stream Requirements
+# Pure Python dependencies only. 
+# We rely on standard library for almost everything.
+# Just standard tooling if needed.
+
+typing_extensions>=4.0.0; python_version < "3.10"
