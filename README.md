@@ -1,59 +1,63 @@
-# 🚀 High-Performance Python Engineering Portfolio
-> **Principal Engineer / Systems Architect**
+# High-Performance Python Engineering Portfolio
+**Principal Engineer / Systems Architect**
 
-This repository contains 5 specialized, high-performance systems integrated into a Monorepo.
-Each project demonstrates a specific domain of advanced Computer Science, implemented from scratch in pure Python (No external heavy dependencies).
+This repository contains five specialized, high-performance systems integrated into a Monorepo. Each project demonstrates a specific domain of advanced Computer Science, implemented from scratch in pure Python without external heavy dependencies.
 
 ---
 
-## 📂 Project Index
+## Project Index
 
-### 1. [Hyperion-Stream](./hyperion_stream) 🌊
+### 1. [Hyperion-Stream](./hyperion_stream)
 **Distributed Stream Processing Engine**
-> *Like a lightweight Kafka/Flink.*
-- **Killer Feature**: Custom **Binary Protocol** with Metaclasses & Descriptors.
-- **Internals**: `asyncio` Reactor, Write-Ahead-Log (WAL) via `mmap`.
+*A lightweight alternative to Kafka/Flink.*
 
-### 2. [Nebula-Graph](./nebula_graph) 🌌
+- **Key Features**: Custom Binary Protocol using Metaclasses & Descriptors for O(1) serialization.
+- **Technical Implementation**: Built on `asyncio` Reactor pattern with a Write-Ahead-Log (WAL) using memory-mapped files (`mmap`) for durability.
+
+### 2. [Nebula-Graph](./nebula_graph)
 **Distributed Graph Database**
-> *Like a Python-native Neo4j.*
-- **Killer Feature**: **Raft Consensus Algorithm** and Adjacency List Storage Engine.
-- **Internals**: **GQL** (Graph Query Language) Compiler, Inverted Index.
+*A Python-native alternative to Neo4j.*
 
-### 3. [Synapse-Autograd](./synapse_autograd) 🧠
+- **Key Features**: Strong consistency via Raft Consensus Algorithm and an Adjacency List Storage Engine.
+- **Technical Implementation**: Custom GQL (Graph Query Language) Compiler and Inverted Indexing for efficient property lookups.
+
+### 3. [Synapse-Autograd](./synapse_autograd)
 **Deep Learning Framework**
-> *Like a tiny PyTorch.*
-- **Killer Feature**: **Reverse-Mode Automatic Differentiation** engine.
-- **Internals**: Dynamic Computational Graph, SGD Optimizer, pure Python Linear Algebra.
+*A pedagogical implementation of PyTorch internals.*
 
-### 4. [Helix-Consensus](./helix_consensus) 🧬
+- **Key Features**: Reverse-Mode Automatic Differentiation engine supporting arbitrary dynamic graphs.
+- **Technical Implementation**: Dynamic Computational Graph construction, SGD Optimizer, and pure Python Linear Algebra utilities.
+
+### 4. [Helix-Consensus](./helix_consensus)
 **Coordination Service**
-> *Like Zookeeper/Etcd.*
-- **Killer Feature**: Fault-Tolerant **State Machine Replication**.
-- **Internals**: Custom **UDP/TCP Hybrid Protocol**, Atomic State Persistence.
+*A distributed coordination service similar to Zookeeper or Etcd.*
 
-### 5. [Ouroboros-VM](./ouroboros_vm) 🐍
+- **Key Features**: Fault-Tolerant State Machine Replication handling network partitions.
+- **Technical Implementation**: Hybrid UDP/TCP Protocol design and Atomic State Persistence to handle crash recovery.
+
+### 5. [Ouroboros-VM](./ouroboros_vm)
 **Language Virtual Machine**
-> *A Custom Stack-Based VM.*
-- **Killer Feature**: Complete **Compiler Toolchain** (Source -> Lexer -> Bytecode).
-- **Internals**: Stack-based execution loop, Call Frames, Instruction Set Architecture (ISA).
+*A custom Stack-Based Virtual Machine.*
+
+- **Key Features**: Complete Compiler Toolchain taking source code to executable bytecode.
+- **Technical Implementation**: Regex-based Lexer, Single-pass Compiler, and a Fetch-Decode-Execute VM loop managing Data and Call Stacks.
 
 ---
 
-## 🛠️ DevOps & Infrastructure
+## DevOps & Infrastructure
 
-Every project is **Cloud-Native Ready**:
-- **Dockerized**: Each service has a production-optimized `Dockerfile`.
-- **Tested**: Unit test suites included in `tests/` directories.
-- **Zero-Dependency**: Runs on standard Python 3.10+.
+All projects are designed for Cloud-Native environments:
+
+- **Containerization**: Each service includes a production-optimized `Dockerfile`.
+- **Testing**: Comprehensive unit test suites provided in `tests/` directories for each module.
+- **Compatibility**: Compatible with standard Python 3.11+.
 
 ### Quick Start
+
+To run the Deep Learning demonstration:
+
 ```bash
-# Example: Run the Deep Learning Demo
 cd synapse_autograd
 docker build -t synapse .
 docker run synapse
 ```
-
----
-
