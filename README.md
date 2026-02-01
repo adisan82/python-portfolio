@@ -1,4 +1,4 @@
-# Adisan Scripts
+# Advanced Python Architecture Projects
 **Core Systems & Distributed Computing Implementations**
 
 This repository contains a collection of five specialized, high-performance systems. Each project is a standalone implementation of complex computer science concepts, built from scratch in pure Python without external heavy dependencies.
