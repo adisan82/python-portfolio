@@ -167,6 +167,11 @@ class BinaryMeta(type):
         namespace['_fields'] = tuple(field_names)
         namespace['_descriptors'] = {f[0]: f[1] for f in fields}
         
+        # Usuwamy deskryptory z namespace, aby nie kolidowały ze __slots__
+        for name in field_names:
+            if name in namespace:
+                del namespace[name]
+        
         # Generowanie format stringa C-struct (Network Byte Order '!')
         # UWAGA: To obsługuje tylko Fixed-Size fields w tej wersji.
         # Payload dynamiczny jest doklejany osobno.
@@ -185,7 +190,7 @@ class BinaryMeta(type):
         # Optymalizacja pamięci - __slots__
         # Nadpisujemy slots, jeśli nie zostały zdefiniowane ręcznie.
         if '__slots__' not in namespace:
-            namespace['__slots__'] = field_names + ('_values',)
+            namespace['__slots__'] = tuple(field_names) + ('_values',)
 
         return super().__new__(mcs, name, bases, namespace)
 

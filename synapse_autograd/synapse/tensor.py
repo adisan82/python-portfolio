@@ -85,7 +85,8 @@ class Tensor:
             if other.grad is None: other._init_grad()
             
             # Chain Rule: d(a*b)/da = b * grad_out
-            self.grad = Linalg.add(self.grad, Linalg.mul_scalar(other.data, 1.0)) # TODO: Fix element-wise grad logic properly
+            # Chain Rule: d(a*b)/da = b * grad_out
+            # Removed incorrect TODO line
             # W element-wise: grad_self += other.data * out.grad
             
             # Poprawna implementacja element-wise backprop (manual loops)

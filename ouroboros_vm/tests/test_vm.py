@@ -10,12 +10,11 @@ class TestOuroborosVM(unittest.TestCase):
         PUSH 20
         ADD
         """
-        # Safe syntax (no strings with spaces to avoid tokenizer issues)
-        source = \"\"\"
+        source = """
         PUSH 10
         PUSH 20
         ADD
-        \"\"\"
+        """
         
         compiler = Compiler()
         code_obj = compiler.compile(source)

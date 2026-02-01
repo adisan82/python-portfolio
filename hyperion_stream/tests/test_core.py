@@ -1,6 +1,6 @@
 import unittest
 import struct
-from hyperion_stream.core.protocol import BinaryMessage, FieldType
+from hyperion_stream.core.protocol import BinaryMessage
 
 class TestHyperionProtocol(unittest.TestCase):
     def test_packing(self):
